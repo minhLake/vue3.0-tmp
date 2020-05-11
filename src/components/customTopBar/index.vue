@@ -1,8 +1,12 @@
 <template>
   <div class="topbar flex-b">
-    <Button icon="back" class="btn"></Button>
+    <div>
+      <Button icon="back" class="btn" @click="$router.back()" v-if="historyStatus"></Button>
+    </div>
     <p>{{ title }}</p>
-    <Button icon="more" class="btn"></Button>
+    <div>
+      <Button icon="more" class="btn"></Button>
+    </div>
   </div>
 </template>
 
@@ -11,10 +15,15 @@ import { Button } from "mint-ui";
 
 export default {
   components: { Button },
+  computed: {
+    historyStatus: () => window.history.length > 0
+  },
   props: {
     title: String
+  },
+  mounted() {
   }
-}
+};
 </script>
 
 <style lang="less" scoped>

@@ -20,7 +20,6 @@ export default {
     title: vm => vm.$store.state.title,
   },
   mounted() {
-    console.log(this.$route)
   }
 }
 </script>

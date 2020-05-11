@@ -51,14 +51,14 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  if (to.meta.title) {
+    document.title = to.meta.title || '渠易宝'
+  }
   if (to.matched.length !== 0) {
     next();
   }
   else {
     next({ name: '404' })
-  }
-  if (to.meta.title) {
-    document.title = to.meta.title || '渠易宝'
   }
 });
 
