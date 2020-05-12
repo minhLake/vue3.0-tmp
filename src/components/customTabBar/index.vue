@@ -1,7 +1,11 @@
 <template>
   <div class="tabbar flex-c" :style="{ backgroundColor: tabBar.backgroundColor }">
     <template v-for="(item,index) in tabBar.list">
-      <div :key="index" @click="tabBarChangeHandle(item.pagePath, index)" class="flex-1 c-flex-c btn">
+      <div
+        :key="index"
+        class="flex-1 c-flex-a btn"
+        @click="tabBarChangeHandle(item.pagePath, index)"
+      >
         <img class="icon" :src="item.iconPath" v-if="selected !== index" alt />
         <img class="icon" :src="item.selectedIconPath" v-else alt />
         <p :style="{ color: tabBar.color }" v-if="selected !== index">{{ item.text }}</p>
@@ -24,7 +28,7 @@ export default {
     ...mapMutations(["selectedChangeHandle"]),
     tabBarChangeHandle(path, selected) {
       // this.$router.push({ path });
-      this.selectedChangeHandle({selected});
+      this.selectedChangeHandle({ selected });
     }
   }
 };

@@ -1,9 +1,7 @@
-import axios from './http';
-import { base } from './urls';
+import axios from "./http";
+import base from "./urls";
 
 //登录
-const login = (params) => { return axios.post(`${base.signIn}`, params) };
-
-export default {
-  login
-}
+export const login = params => {
+  return axios.get(`${base.signIn}`, params);
+};

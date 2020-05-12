@@ -16,7 +16,7 @@ const routes = [
       {
         path: "home",
         name: "home",
-        meta: { title: '首页' },
+        meta: { title: "首页" },
         component: () => import("@/views/home")
       }
     ]
@@ -26,11 +26,12 @@ const routes = [
     path: "/other",
     name: "Other",
     component: Other,
+    redirect: { name: "404" },
     children: [
       {
         path: "login",
         name: "login",
-        meta: { title: '登录' },
+        meta: { title: "登录" },
         component: () => import("@/views/login")
       }
     ]
@@ -39,7 +40,7 @@ const routes = [
   {
     path: "/404",
     name: "404",
-    meta: { title: '404' },
+    meta: { title: "404" },
     component: () => import("@/views/404")
   }
 ];
@@ -52,13 +53,12 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   if (to.meta.title) {
-    document.title = to.meta.title || '渠易宝'
+    document.title = to.meta.title || "渠易宝";
   }
   if (to.matched.length !== 0) {
     next();
-  }
-  else {
-    next({ name: '404' })
+  } else {
+    next({ name: "404" });
   }
 });
 

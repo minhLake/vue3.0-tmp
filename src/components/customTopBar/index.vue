@@ -16,13 +16,12 @@ import { Button } from "mint-ui";
 export default {
   components: { Button },
   computed: {
-    historyStatus: () => window.history.length > 0
+    historyStatus: () => window.history.length > 2
   },
   props: {
     title: String
   },
-  mounted() {
-  }
+  mounted() {}
 };
 </script>
 

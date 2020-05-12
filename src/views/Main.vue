@@ -1,8 +1,8 @@
 <template>
   <div class="page">
-    <custom-top-bar :title="$route.meta.title || title"/>
+    <custom-top-bar :title="$route.meta.title || title" />
     <div class="content">
-      <router-view /> 
+      <router-view />
     </div>
     <custom-tab-bar :tabBar="tabBar" :selected="selected" />
   </div>
@@ -17,11 +17,10 @@ export default {
   computed: {
     tabBar: vm => vm.$store.state.tabBar,
     selected: vm => vm.$store.state.selected,
-    title: vm => vm.$store.state.title,
+    title: vm => vm.$store.state.title
   },
-  mounted() {
-  }
-}
+  mounted() {}
+};
 </script>
 
 <style lang="less" scoped>

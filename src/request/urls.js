@@ -1,6 +1,8 @@
+const url = "/api";
+
 export default {
-  base: {
-    signIn: "",//登录
-    refresh: "",//刷新token
-  }
-}
+  //登录
+  signIn: `${url}/login.json`,
+  //刷新token
+  refresh: `${url}/refresh.json`
+};
