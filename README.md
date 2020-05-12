@@ -1,7 +1,3 @@
-# qybwap
-
-渠易宝wap2.0
-
 ## 技术栈
 
 ### [Vue](https://cn.vuejs.org/v2/guide/index.html)
